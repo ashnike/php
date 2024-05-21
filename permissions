@@ -1,0 +1,18 @@
+sudo chmod 700 /path/to/your/webroot/scripts/myscript.sh
+
+
+# Set ownership to web server user and group
+sudo chown -R www-data:www-data /path/to/your/webroot
+
+# Set directory permissions
+sudo find /path/to/your/webroot -type d -exec chmod 755 {} \;
+
+# Set PHP file permissions
+sudo find /path/to/your/webroot -type f -name "*.php" -exec chmod 644 {} \;
+
+# Secure configuration files
+sudo chmod 600 /path/to/your/webroot/config.php
+
+# Set permissions for upload directory
+sudo chmod 755 /path/to/your/webroot/uploads
+sudo find /path/to/your/webroot/uploads -type f -exec chmod 644 {} \;
